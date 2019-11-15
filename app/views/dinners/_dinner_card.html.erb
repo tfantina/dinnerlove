@@ -1,0 +1,10 @@
+<div class="max-w-sm">
+  <div class="font-bold text-lg mb-2">
+   <%= link_to dinner.name, dinner_path(dinner) %>
+    </div>
+</div>
+<div class="max-w-sm">
+  <% dinner.love.to_i.times do %>
+    💘
+  <% end %>
+  </div>

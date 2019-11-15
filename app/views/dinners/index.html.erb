@@ -1,0 +1,39 @@
+<div class=" justify-center flex flex-wrap">
+  <table class="table-auto w-auto p-20">
+  <thead class="bg-teal-100 text-gray-700 border border-green-300" >
+    <tr>
+      <th class="border border-green-300 px-4 py-2">Monday</th>
+      <th class="border border-green-300 px-4 py-2">Tuesday</th>
+      <th class="border border-green-300 px-4 py-2">Wednesday</th>
+      <th class="border border-green-300 px-4 py-2">Thursday</th>
+      <th class="border border-green-300 px-4 py-2">Friday</th>
+      <th class="border border-green-300 px-4 py-2">Saturday</th>
+      <th class="border border-green-300 px-4 py-2">Sunday</th>
+    </tr>
+  </thead>
+
+  <tbody  class="border rounded-b-sm border-green-300">
+    <tr>
+      <% @seven_random_dinners.each do |dinner| %>
+
+          <td class="border border-green-300 px-2 flex-start justify-center"><%= render "dinner_card", dinner: dinner%> </td>
+
+      <% end %>
+      </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<br>
+
+<%= link_to dinners_path, class: "text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full" do %>
+ Shuffle
+<% end %>
+<% if user_signed_in?  %>
+  <%= link_to 'New Dinner', new_dinner_path, class: "text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
+  <%= link_to 'Lock it Down', new_user_session_path, class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path, class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
+<% end %>

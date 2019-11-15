@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  notes: MyText
+  last_had: 2019-11-09 17:25:11
+  love: 1
+
+two:
+  name: MyString
+  notes: MyText
+  last_had: 2019-11-09 17:25:11
+  love: 1
