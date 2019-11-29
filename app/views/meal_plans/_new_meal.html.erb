@@ -1,0 +1,10 @@
+ <%= form_with model: @meal_plan do |f| %>
+
+
+  <% meals.each do |dinner| %>
+  <%= hidden_field_tag "meal_plan[dinner_ids][]", dinner.id %>
+<% end %>
+
+  <%= f.hidden_field(:weekof, value: Date.today.beginning_of_week) %>
+    <%= f.submit'Lock it Down', class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
+  <% end %>

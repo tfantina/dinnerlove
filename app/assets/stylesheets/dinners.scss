@@ -1,3 +1,74 @@
 // Place all the styles related to the Dinners controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dinner-card {
+  border-color: #9ae6b4;
+  border-width: 1px;
+  min-width: 10rem;
+}
+
+.dinner-card-header {
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  background-color: #e6fffa;
+}
+
+.dinner-card-body {
+  font-weight: bold;
+  font-size: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+}
+.dinner {
+  grid-row: 1;
+  padding: .25rem 1rem 0rem 1rem;
+}
+
+
+.love {
+  grid-row: 2;
+  padding: .5rem 1rem 0rem 1rem;
+}
+
+.dinner-array {
+  max-width: 935px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 950px)  {
+
+  .dinner-array {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dinner-card {
+    min-width: 20rem;
+    margin-bottom: 1rem;
+    border-width: 1px;
+    border-radius: 0 0 .25rem .25rem;
+  }
+
+  .dinner-card:nth-child(2n) {
+    border-left-width: 1px;
+  }
+
+}
+
+@media only screen and (min-width: 950px) {
+  .dinner-card:first-child {
+    border-radius: 0 0 0 0.25rem;
+  }
+  .dinner-card:last-child {
+    border-radius: 0 0 0.25rem 0;
+  }
+
+  .dinner-card:nth-child(2n) {
+    border-left-width: 0px;
+  }
+
+}
