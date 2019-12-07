@@ -1,3 +1,1 @@
-<% @meal_plan.dinners.each do |dinner| %>
-    <%= dinner.name %>
-<% end %>
+<%= render "/shared/meals_layout", meals: @meal_plan.dinners %>

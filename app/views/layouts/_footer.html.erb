@@ -3,11 +3,10 @@
 <%= link_to dinners_path, class: "text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full" do %>
  Shuffle
 <% end %>
+
 <% if user_signed_in?  %>
   <%= link_to 'New Dinner', new_dinner_path, class: "text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
-<% if current_page?(controller: 'dinners', action: 'index')%>
   <%= render "/meal_plans/new_meal", meals: @seven_random_dinners %>
-  <% end %>
 <% else %>
   <%= link_to 'Sign In', new_user_session_path, class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
 <% end %>

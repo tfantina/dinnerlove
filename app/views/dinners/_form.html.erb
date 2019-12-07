@@ -1,7 +1,6 @@
 <div class="w-full max-x-xs">
-<form class="bg-white shadow-sm px-8 p4 m4">
 <div class="mb-4">
-<%= form_with(model: dinner, local: true) do |form| %>
+<%= form_with model: @dinner do |form| %>
   <% if dinner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dinner.errors.count, "error") %> prohibited this dinner from being saved:</h2>
@@ -28,5 +27,4 @@
   </div>
 <% end %>
 </div>
-</form>
 </div>

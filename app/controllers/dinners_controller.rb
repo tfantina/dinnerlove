@@ -18,6 +18,7 @@ class DinnersController < ApplicationController
   # GET /dinners/new
   def new
     @dinner = Dinner.new
+    puts "{{{{{{{{{{{{{{{{WOW"
   end
 
   # GET /dinners/1/edit
@@ -27,13 +28,15 @@ class DinnersController < ApplicationController
   # POST /dinners
   # POST /dinners.json
   def create
-    @dinner = current_user.dinners.new(dinner_params)
-
+    puts "{{{{{{{{{{{{{{{{{{{{{{{{{{{{create}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
+    @dinner = current_user.dinners.build(dinner_params)
+   puts "{{{{{{{{{{{{{{{{{{{{{{{{{{{{{#{@dinner}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
     respond_to do |format|
       if @dinner.save
         format.html { redirect_to @dinner, notice: 'Dinner was successfully created.' }
         format.json { render :show, status: :created, location: @dinner }
       else
+        puts "PROBLEM"
         format.html { render :new }
         format.json { render json: @dinner.errors, status: :unprocessable_entity }
       end
@@ -73,7 +76,7 @@ class DinnersController < ApplicationController
     # checks if the user already has a mealplan for the week
     def meal_plan_exists?
      if user_signed_in? then
-       @meal_plan = current_user.meal_plans.where(weekof: Date.today.beginning_of_week.to_datetime).take 
+       @meal_plan = current_user.meal_plans.where(weekof: Date.today.beginning_of_week.to_datetime).take
      else
        return false
      end
