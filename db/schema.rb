@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_23_202942) do
+ActiveRecord::Schema.define(version: 2019_12_12_125410) do
 
   create_table "dinners", force: :cascade do |t|
     t.string "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_202942) do
 
   create_table "meal_plans", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.datetime "weekof"
+    t.date "weekof"
     t.string "meals"
     t.index ["user_id"], name: "index_meal_plans_on_user_id"
   end

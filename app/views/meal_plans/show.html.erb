@@ -1,1 +1,10 @@
+Meals for the week of: 
+<div class="button-log">
+<% unless @meal_plan_this_week == nil %>
+<%= link_to @meal_plan_this_week.weekof, meal_plan_path(@meal_plan_this_week.id), class: "button button-show button-log-radius" %>
+<% end %>
+<% unless @meal_plan_next_week == nil %>
+<%= link_to @meal_plan_next_week.weekof, meal_plan_path(@meal_plan_next_week.id), class: "button button-show button-log-radius" %>
+<% end %>
+</div>
 <%= render "/shared/meals_layout", meals: @meal_plan.dinners %>

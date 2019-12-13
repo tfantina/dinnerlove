@@ -13,6 +13,7 @@ class DinnersController < ApplicationController
   # GET /dinners/1
   # GET /dinners/1.json
   def show
+    @dinners = current_user.dinners
   end
 
   # GET /dinners/new

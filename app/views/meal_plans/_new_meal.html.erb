@@ -1,12 +1,18 @@
- <%= form_with url: meal_plans_path, method: "post" do |f| %>
-  <% meals.each do |dinner| %>
-  <%= hidden_field_tag "meal_plan[dinner_ids][]", dinner.id %>
+<% if @meal_plan_this_week && @meal_plan_next_week then %>
+</div>
 <% end %>
-<% if @user_has_meal_plan %>
-  <%= f.hidden_field(:weekof, value: Date.today.beginning_of_week.next_week) %>
-    <%= f.submit "Next Week's Plan", class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
-<% else %>
-  <%= f.hidden_field(:weekof, value: Date.today.beginning_of_week) %>
-    <%= f.submit'Lock it Down', class: "justify-center text-white bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded-full"%>
+ <%= form_with url: meal_plans_path, method: "post" do  %>
+  <% meals.each do |dinner| %>
+  <%= hidden_field_tag("meal_plan[dinner_ids][]", dinner.id) %>
+ 
+  <% end %>
+  <% unless @meal_plan_this_week == nil %>
+    <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week) %>
+    <%= submit_tag "Meal Plan", class: "button button-create button-log-radius"%>
+  <% end %>
+  
+  <% if @meal_plan_this_week != nil && @meal_plan_next_week == nil then %>
+    <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week.next_week) %>
+    <%= submit_tag 'Next Week', class: "button button-create button-log-radius" %>
   <% end %>
 <% end %>

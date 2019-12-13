@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+.button-log {
+  display: flex;
+}
+
+a.button {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.button {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.button-create {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #48bb78;
+}
+
+.button-show {
+  font-weigth: 700;
+  color: #ffffff;
+  background-color: #dd6b20;
+}
+
+.button-create:hover,
+.button-create:active {
+  background-color: #2f855a;
+}
+
+.button-log-radius {
+  border-left-color: aquamarine;
+  border-width: 0.5px;
+}
+
+.button-log-radius:first-child {
+  border-bottom-left-radius: 9999px;
+  border-top-left-radius: 9999px;
+}
+.button-log-radius:last-child {
+  border-bottom-right-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-width: 0px;
+}
