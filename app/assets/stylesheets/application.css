@@ -43,6 +43,13 @@ a.button {
   background-color: #dd6b20;
 }
 
+.button-show-active {
+  font-weigth: 700;
+  text-decoration: underline;
+  color: #ffffff;
+  background-color: #c05621;
+}
+
 .button-create:hover,
 .button-create:active {
   background-color: #2f855a;

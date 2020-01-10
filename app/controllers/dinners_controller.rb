@@ -19,7 +19,7 @@ class DinnersController < ApplicationController
   # GET /dinners/new
   def new
     @dinner = Dinner.new
-   
+
   end
 
   # GET /dinners/1/edit
@@ -64,6 +64,9 @@ class DinnersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def test
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.

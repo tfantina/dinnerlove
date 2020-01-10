@@ -11,7 +11,10 @@ class MealPlansController < ApplicationController
     end
 
     def create
-      @meal_plan = current_user.meal_plans.build(meal_plan_params)
+  
+      @meal_plan = current_user.meal_plans.build(get_week(meal_plan_params))
+      
+      puts "#{@meal_plan.weekof} WELL THATS A MEAL PLAN"
       respond_to do |format|
         if @meal_plan.save
          format.html { redirect_to @meal_plan, notice: 'Dinner was successfully created.' }
@@ -24,13 +27,24 @@ class MealPlansController < ApplicationController
     private
 
     def meal_plan_params
-        params.require(:meal_plan).permit(:weekof, dinner_ids: [])
+        params.require(:meal_plan).permit(:week, :weekof, dinner_ids: [])
     end
 
     def user_meal_plans 
-      meal_plans = {this_week: current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week),
-                    next_week: current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week.next_week) }     
+        @meal_plans = {this_week: current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week),
+                       next_week: current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week.next_week) }     
     end 
 
+    def get_week(params)
+      if params["week"] == "this_week" 
+         params[:weekof] = Date.today.beginning_of_week
+         params.delete(:week)
+         puts "#{params} THIS ARE THE PARAMS"
+       else 
+        params[:weekof] = Date.today.beginning_of_week.next_week
+        puts "#{params} THIS ARE THE PARAMS"
+       end 
+
+    end
 
 end

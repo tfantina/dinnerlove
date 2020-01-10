@@ -14,4 +14,6 @@ module DinnersHelper
     def week_of
         Date.today.beginning_of_week
     end
+
+    
 end
