@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class DinnersTest < ApplicationSystemTestCase
   setup do
-    @dinner = dinners(:one)
+    @dinner = dinners(:spaghetti)
   end
 
   test "visiting the index" do

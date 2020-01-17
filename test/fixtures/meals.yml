@@ -1,9 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  dinner: 
-  meal_plan: one
-
+  dinner_id: 1
+  meal_plan_id: 1
 two:
-  dinner: 
-  meal_plan: two
+  dinner_id: 2
+  meal_plan_id: 1
+three:
+  dinner_id: 3
+  meal_plan_id: 1
+four:
+  dinner_id: 4
+  meal_plan_id: 1
+five:
+  dinner_id: 5
+  meal_plan_id: 1
+six:
+  dinner_id: 6
+  meal_plan_id: 1
+seven:
+  dinner_id: 7
+  meal_plan_id: 1

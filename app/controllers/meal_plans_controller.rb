@@ -13,7 +13,7 @@ class MealPlansController < ApplicationController
     def create
       @meal_plan = current_user.meal_plans.build(meal_plan_params)
       respond_to do |format|
-        if @meal_plan.save
+        if @meal_plan.save!
          format.html { redirect_to @meal_plan, notice: 'Dinner was successfully created.' }
         else
            format.html { redirect_to root_path, notice: 'Your meal plan was not saved.' }
@@ -24,6 +24,8 @@ class MealPlansController < ApplicationController
     private
 
     def meal_plan_params
+        puts "HI"
+        puts "#{params}"
         params.require(:meal_plan).permit(:weekof, dinner_ids: [])
     end
 
