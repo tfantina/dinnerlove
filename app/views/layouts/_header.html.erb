@@ -1,1 +1,18 @@
+<<<<<<< HEAD
 <h1 class="flex text-gray-700 p-2 text-3xl">DinnerLove</h1>
+=======
+<div class="header-flex">
+
+<h1 class="flex text-gray-700 p-2 text-3xl">DinnerLove</h1>
+
+<div class="top-right-user">
+  <% if user_signed_in? then %>
+  <%= link_to "Settings", edit_user_password_path %>
+  <%= link_to "Logout", destroy_user_session_path %>
+  <% end %>
+
+
+  </div>
+
+</div>
+>>>>>>> master

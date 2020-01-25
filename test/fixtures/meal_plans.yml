@@ -1,0 +1,6 @@
+this_week:
+  user_id: 1
+  weekof: <%= Date.today.beginning_of_week %>
+next_week:
+  user_id: 1
+  weekof: <%= Date.today.beginning_of_week.next_week %>
