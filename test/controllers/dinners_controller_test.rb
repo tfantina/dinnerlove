@@ -2,10 +2,11 @@ require 'test_helper'
 
 class DinnersControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
-
+include FactoryBot::Syntax::Methods
   setup do
-    @dinner = dinners(:pizza)
-    @user = users(:travis)
+    @user = create(:user)
+    @dinner = create(:dinner, user: @user)
+
     sign_in @user
   end
 
@@ -40,8 +41,8 @@ class DinnersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update dinner" do
-    patch dinner_url(@dinner), params: { dinner: { last_had: @dinner.last_had, love: @dinner.love, name: @dinner.name, notes: @dinner.notes } }
-    assert_response :success
+    patch dinner_url(@dinner), params: { dinner: { love: @dinner.love, name: @dinner.name, notes: @dinner.notes } }
+    assert_redirected_to @dinner
   end
 
   test "should destroy dinner" do

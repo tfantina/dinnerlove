@@ -7,11 +7,11 @@
 
   <% if current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week) == nil %>
     <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week) %>
-    <%= submit_tag "Plan This Week", class: "button button-create button-log-radius"%>
+    <%= submit_tag "Plan This Week", class: "button button-create button-log-radius", id: 'this-week'%>
   <% end %>
 
   <% if current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week.next_week) == nil %>
     <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week.next_week) %>
-    <%= submit_tag 'Plan Next Week', class: "button button-create button-log-radius" %>
-  <% end %> 
+    <%= submit_tag 'Plan Next Week', class: "button button-create button-log-radius", id: "next-week" %>
+  <% end %>
 <% end %>

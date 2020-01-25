@@ -24,8 +24,6 @@ class MealPlansController < ApplicationController
     private
 
     def meal_plan_params
-        puts "HI"
-        puts "#{params}"
         params.require(:meal_plan).permit(:weekof, dinner_ids: [])
     end
 

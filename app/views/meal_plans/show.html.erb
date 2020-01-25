@@ -1,6 +1,5 @@
 Meals for the week of:
 <div class="button-log">
-  <%= puts "#{@meal_plans} wow that's all" %>
 <% if @meal_plans[:this_week] != nil %>
 <%= link_to @meal_plans[:this_week][:weekof], meal_plan_path(@meal_plans[:this_week][:id]), class: "button button-show button-log-radius" %>
 <% end %>

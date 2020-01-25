@@ -2,15 +2,16 @@ require "application_system_test_case"
 
 class MealPlansTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
+  include FactoryBot::Syntax::Methods
 
   setup do
-    @user = users(:travis)
+    @user = create(:user)
     sign_in @user
   end
   test "has a meal for this week" do
-    @meal_plan = meal_plans(:this_week)
+    @meal_plan = create(:meal_plan, user: @user)
     puts "DO WE GET HERE #{@meal_plan}"
     get root_path
-    asssert_selector 'a', text: Date.today.beginning_of_week.next_week
+    asssert_select 'a', text: Date.today.beginning_of_week.next_week
 
 end
