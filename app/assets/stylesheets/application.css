@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
 
 .button-log {
@@ -44,7 +45,7 @@ a.button {
 }
 
 .button-show-active {
-  font-weigth: 700;
+  font-weight: 700;
   text-decoration: underline;
   color: #ffffff;
   background-color: #c05621;
@@ -67,5 +68,9 @@ a.button {
 .button-log-radius:last-child {
   border-bottom-right-radius: 9999px;
   border-top-right-radius: 9999px;
+  border-width: 0px;
+}
+.button-log-radius:only-of-type {
+  border-radius: 9999px;
   border-width: 0px;
 }

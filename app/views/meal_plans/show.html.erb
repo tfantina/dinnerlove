@@ -1,10 +1,6 @@
+<div class="week-of">
 Meals for the week of:
-<div class="button-log">
-<% if @meal_plans[:this_week] != nil %>
-<%= link_to @meal_plans[:this_week][:weekof], meal_plan_path(@meal_plans[:this_week][:id]), class: "button button-show button-log-radius" %>
-<% end %>
-<% if @meal_plans[:next_week] != nil %>
-<%= link_to @meal_plans[:next_week][:weekof], meal_plan_path(@meal_plans[:next_week][:id]), class: "button button-show button-log-radius" %>
-<% end %>
+<%= render "week_of_button_log", meals: @meal_plans %>
 </div>
+
 <%= render "/shared/meals_layout", meals: @meal_plan.dinners %>
