@@ -1,0 +1,24 @@
+@import "colors";
+
+.header {
+  background-color: $sky-blue;
+  height: 70px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.header-logo {
+  grid-column: 1;
+}
+
+.header-links {
+  grid-column: 2;
+  padding: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="button-log">
+<% if meals[:this_week] != nil %>
+<%= link_to meals[:this_week][:weekof], meal_plan_path(meals[:this_week][:id]), class: "button button-show button-log-radius" %>
+<% end %>
+<% if meals[:next_week] != nil %>
+<%= link_to meals[:next_week][:weekof], meal_plan_path(meals[:next_week][:id]), class: "button button-show button-log-radius" %>
+<% end %>
+</div>
