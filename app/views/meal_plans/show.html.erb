@@ -1,6 +1,6 @@
 <div class="week-of">
 Meals for the week of:
-<%= render "week_of_button_log", meals: @meal_plans %>
+<%= render "week_of_button_log", meals: @meal_plans, current_week: @meal_plan %>
 </div>
 
 <%= render "/shared/meals_layout", meals: @meal_plan.dinners %>

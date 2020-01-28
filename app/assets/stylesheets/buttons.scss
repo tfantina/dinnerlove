@@ -1,0 +1,71 @@
+@import "colors";
+.button-log {
+  display: flex;
+}
+
+a.button {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.button {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.button-create {
+  font-weight: 700;
+  color: $white;
+  background-color: $palm-green;
+  transition: 0.3s;
+}
+.button-create:hover,
+.button-create:active {
+  background-color: $palm-green-dark;
+}
+
+.button-show {
+  font-weight: 700;
+  color: $white;
+  background-color: $surf-blue;
+  transition: 0.3s;
+}
+
+.button-show:hover,
+.button-show:active {
+  background-color: $surf-blue-dark;
+}
+
+.button-show-active {
+  font-weight: 700;
+  color: $white;
+  background-color: $palm-green;
+  transition: 0.3s;
+}
+
+.button-show-active:hover,
+.button-show-active:active,
+.button-show-active:clicked {
+  background-color: $palm-green-dark;
+}
+
+.button-log-radius {
+  border-left-color: aquamarine;
+  border-width: 0.5px;
+}
+
+.button-log-radius:first-child {
+  border-bottom-left-radius: 9999px;
+  border-top-left-radius: 9999px;
+}
+.button-log-radius:last-child {
+  border-bottom-right-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+.button-log-radius:only-of-type {
+  border-radius: 9999px;
+  border-width: 0px;
+}

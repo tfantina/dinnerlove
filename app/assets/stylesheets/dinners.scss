@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "colors";
+
 .dinner-card {
   border-color: #9ae6b4;
   border-width: 1px;
@@ -10,7 +12,7 @@
 
 .dinner-card-header {
   padding: 0.25rem 1rem 0.25rem 1rem;
-  background-color: #7fdbf4;
+  background-color: $sky-blue;
 }
 
 .dinner-card-body {

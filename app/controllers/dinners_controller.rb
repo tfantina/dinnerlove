@@ -19,7 +19,7 @@ class DinnersController < ApplicationController
   # GET /dinners/new
   def new
     @dinner = Dinner.new
-   
+
   end
 
   # GET /dinners/1/edit
