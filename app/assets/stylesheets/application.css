@@ -15,3 +15,24 @@
 
 
  */
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+.mid-width {
+  min-width: 40rem;
+  max-width: 100rem;
+}
+.card {
+  box-shadow: 2px 4px 6px hsla(200, 56%, 10%, 0.45);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.7rem;
+  margin: 2rem;
+  border-radius: 0.25rem;
+}
