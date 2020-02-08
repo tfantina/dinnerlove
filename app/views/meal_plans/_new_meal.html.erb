@@ -1,17 +1,17 @@
+<% unless !current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week).nil? &&
+    !current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week.next_week).nil? %>
 
  <%= form_with url: meal_plans_path, method: "post" do  %>
   <% meals.each do |dinner| %>
   <%= hidden_field_tag("meal_plan[dinner_ids][]", dinner.id) %>
   <% end %>
-
-
   <% if current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week) == nil %>
     <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week) %>
     <%= submit_tag "Plan This Week", class: "button button-create button-log-radius", id: 'this-week'%>
   <% end %>
-
   <% if current_user.meal_plans.find_by(weekof: Date.today.beginning_of_week.next_week) == nil %>
     <%= hidden_field_tag("meal_plan[weekof]", Date.today.beginning_of_week.next_week) %>
     <%= submit_tag 'Plan Next Week', class: "button button-create button-log-radius", id: "next-week" %>
   <% end %>
+<% end %>
 <% end %>

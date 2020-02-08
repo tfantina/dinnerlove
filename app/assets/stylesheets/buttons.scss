@@ -1,6 +1,10 @@
 @import "colors";
 .button-log {
   display: flex;
+
+  form {
+    display: flex;
+  }
 }
 
 a.button {
@@ -55,7 +59,7 @@ a.button {
 
 .button-log-radius {
   border-left-color: aquamarine;
-  border-width: 0.5px;
+  margin-left: -4px;
 }
 
 .button-log-radius:first-child {

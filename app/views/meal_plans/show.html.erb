@@ -4,3 +4,5 @@ Meals for the week of:
 </div>
 
 <%= render "/shared/meals_layout", meals: @meal_plan.dinners %>
+
+<%= render "/layouts/sub_footer", links: [:shuffle, :add_dinner] %>

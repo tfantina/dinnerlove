@@ -1,4 +1,3 @@
  <%= render "/shared/meals_layout", meals: @seven_random_dinners %>
-<%= link_to dinners_path, class: "button button-create button-log-radius" do %>
- Shuffle
-<% end %>
+
+<%= render "/layouts/sub_footer", links: [:shuffle, :add_dinner] %>
