@@ -1,18 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="flex center">
+    <div class="dinner-card shadow-lg">
+      <div class="dinner-card-header">
+        <h2><%= @dinner.name %></h2>
+      </div>
+      <div class="dinner-card_body">
+        <strong>Notes:</strong>
+        <%= @dinner.notes %>
+        <div class="love">
+          <strong>Love:</strong>
+          <%= @dinner.love %>
+        </div>
+      </div>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dinner.name %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @dinner.notes %>
-</p>
-<p>
-  <strong>Love:</strong>
-  <%= @dinner.love %>
-</p>
-
-<%= link_to 'Edit', edit_dinner_path(@dinner) %> |
-<%= link_to 'Back', dinners_path %>
+<% edit = @dinner.user_id == current_user.id ? :edit : "" %>
+<%= render "/layouts/sub_footer", links: [:back, :add_dinner, edit] %>

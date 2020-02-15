@@ -28,11 +28,48 @@
 }
 
 .love {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
   grid-row: 2;
   padding: 0.5rem 1rem 0rem 1rem;
+  svg {
+    height: 24px;
+    width: 24px;
+    fill: red;
+    margin-left: -20px;
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.5));
+    z-index: 0;
+  }
+
+  svg:first-of-type {
+    margin-left: 0px;
+    z-index: 10;
+    height: 26px;
+    width: 26px;
+  }
+  svg:nth-of-type(2) {
+    margin-left: -4px;
+    z-index: 8;
+  }
+
+  svg:nth-of-type(3) {
+    margin-left: -8px;
+    z-index: 6;
+  }
+  svg:nth-of-type(4) {
+    margin-left: -16px;
+    z-index: 4;
+  }
+  svg:nth-of-type(5) {
+    margin-left: -20px;
+    z-index: 2;
+  }
 }
 
 .dinner-array {
+  padding-top: 2em;
+  padding-bottom: 2em;
   max-width: 935px;
   display: flex;
   margin-left: auto;
