@@ -55,6 +55,18 @@ class DinnersController < ApplicationController
     end
   end
 
+  #Ability for a user to love a dinner (one user one love)
+  def love
+    if !already_loved?
+      @dinner = Dinner.find(params[:id])
+      @love = @dinner.loves.build(user_id: current_user.id)
+      @love.save
+    else
+      @love = Love.find_by(user_id: current_user.id, dinner_id: params[:id])
+      @love.destroy
+    end
+  end
+
   # DELETE /dinners/1
   # DELETE /dinners/1.json
   def destroy
@@ -88,5 +100,8 @@ class DinnersController < ApplicationController
       params.require(:dinner).permit(:name, :notes)
     end
 
+    def already_loved?
+      Love.where(user_id: current_user.id, dinner_id: params[:id]).exists?
+    end
 
 end

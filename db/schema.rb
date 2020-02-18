@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_125410) do
+ActiveRecord::Schema.define(version: 2020_02_15_152229) do
 
   create_table "dinners", force: :cascade do |t|
     t.string "name"
     t.text "notes"
     t.datetime "last_had"
-    t.integer "love"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_dinners_on_user_id"
+  end
+
+  create_table "loves", force: :cascade do |t|
+    t.integer "dinner_id", null: false
+    t.integer "user_id", null: false
+    t.index ["dinner_id"], name: "index_loves_on_dinner_id"
+    t.index ["user_id"], name: "index_loves_on_user_id"
   end
 
   create_table "meal_plans", force: :cascade do |t|
@@ -56,6 +62,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_125410) do
   end
 
   add_foreign_key "dinners", "users"
+  add_foreign_key "loves", "dinners"
+  add_foreign_key "loves", "users"
   add_foreign_key "meal_plans", "users"
   add_foreign_key "meals", "meal_plans"
   add_foreign_key "users", "dinners"

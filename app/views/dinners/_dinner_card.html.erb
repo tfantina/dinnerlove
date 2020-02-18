@@ -7,8 +7,8 @@
         <%= link_to dinner[:dinner].name, dinner_path(dinner[:dinner]) %>
       </div>
       <div class="love">
-
-          <% show_love(dinner[:dinner].love.to_i) %>
+        <%= button_to "Love", love_dinner_path(dinner[:dinner]), method: "post", remote: true%>
+          <%= show_svg('heart') %>
 
       </div>
     </div>
