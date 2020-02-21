@@ -6,13 +6,22 @@
       <div class="dinner-card_body">
         <strong>Notes:</strong>
         <%= @dinner.notes %>
-        <div class="love">
-          <strong>Love:</strong>
-          <%= @dinner.loves.count %>
         </div>
-      </div>
-    </div>
+        <div class="love">
+          <div id="user-status-<%= @dinner.id %>">
+            <% if current_user_loves?(@dinner) %>
+              You love this dinner.
+              <% end %>
+              </div>
+              <%= button_to love_dinner_path(@dinner), method: "post", remote: true do %>
+                <%= show_svg('heart') %>
+              <% end %>
+
+          x<%= @dinner.loves.count %>
+        </div>
+
 </div>
 
+</div>
 <% edit = @dinner.user_id == current_user.id ? :edit : "" %>
 <%= render "/layouts/sub_footer", links: [:back, :add_dinner, edit] %>

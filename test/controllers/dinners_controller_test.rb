@@ -52,4 +52,9 @@ include FactoryBot::Syntax::Methods
 
     assert_redirected_to dinners_url
   end
+
+  test "should love a dinner" do
+    post love_dinner_path(@dinner)
+    assert_response :success
+  end
 end

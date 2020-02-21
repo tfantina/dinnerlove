@@ -14,4 +14,8 @@ module DinnersHelper
     def week_of
         Date.today.beginning_of_week
     end
+
+    def current_user_loves?(dinner)
+        dinner.loves.where(user_id: current_user.id).exists?
+    end
 end

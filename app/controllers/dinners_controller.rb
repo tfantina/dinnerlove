@@ -60,7 +60,11 @@ class DinnersController < ApplicationController
     if !already_loved?
       @dinner = Dinner.find(params[:id])
       @love = @dinner.loves.build(user_id: current_user.id)
-      @love.save
+      respond_to do |format|
+        if @love.save
+          format.js
+        end
+      end
     else
       @love = Love.find_by(user_id: current_user.id, dinner_id: params[:id])
       @love.destroy

@@ -1,9 +1,8 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :dinner do
-    name { Faker::Food::dish }
-    notes { Faker::Food::descriptions }
+  factory :love do
+    association :dinner, factory: :dinner, strategy: :build
     association :user, factory: :user, strategy: :build
   end
 end

@@ -6,65 +6,49 @@
 
 .dinner-card {
   border-color: #9ae6b4;
-  border-width: 1px;
+  border-width: 0.4px;
   min-width: 10rem;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+}
+
+.dinner-card:hover {
+  transform: scale(1.01, 1.01);
 }
 
 .dinner-card-header {
-  padding: 0.25rem 1rem 0.25rem 1rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
   background-color: $sky-blue;
 }
 
 .dinner-card-body {
   font-weight: bold;
-  font-size: 1rem;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center;
-}
-.dinner {
-  grid-row: 1;
-  padding: 0.25rem 1rem 0rem 1rem;
+  font-size: 0.8rem;
+  color: #000;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  min-height: 6rem;
 }
 
 .love {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 30px;
   max-width: 100%;
   overflow: hidden;
-  grid-row: 2;
   padding: 0.5rem 1rem 0rem 1rem;
+
   svg {
     height: 24px;
     width: 24px;
     fill: red;
-    margin-left: -20px;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.5));
     z-index: 0;
+    grid-column: 2;
   }
+}
 
-  svg:first-of-type {
-    margin-left: 0px;
-    z-index: 10;
-    height: 26px;
-    width: 26px;
-  }
-  svg:nth-of-type(2) {
-    margin-left: -4px;
-    z-index: 8;
-  }
-
-  svg:nth-of-type(3) {
-    margin-left: -8px;
-    z-index: 6;
-  }
-  svg:nth-of-type(4) {
-    margin-left: -16px;
-    z-index: 4;
-  }
-  svg:nth-of-type(5) {
-    margin-left: -20px;
-    z-index: 2;
-  }
+div[id^="user"] {
+  font-size: 10px;
 }
 
 .dinner-array {
