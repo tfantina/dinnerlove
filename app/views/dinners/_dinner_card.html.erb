@@ -8,7 +8,7 @@
         <%= link_to @dinner.name, dinner_path(@dinner) %>
     </div>
       <div class="love">
-        <div id="user-status-<%=@dinner.id %>">
+        <div id="user-status-<%= @dinner.id %>">
         <% if current_user_loves?(@dinner) %>
           You love this dinner.
         <% end %>
@@ -16,6 +16,6 @@
         <%= button_to love_dinner_path(@dinner), method: "post", remote: true do %>
           <%= show_svg('heart') %>
         <% end %>
-        x<%= @dinner.loves.count %>
+        <div id="love-count-<%= @dinner.id %>"> x<%= @dinner.loves.count %></div>
     </div>
   </div>

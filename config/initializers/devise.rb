@@ -221,7 +221,7 @@ Devise.setup do |config|
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).
   # You can use :sha1, :sha512 or algorithms from others authentication tools as
-  # :clearance_sha1, :authlogic_sha512 (then you should set stretches above to 20
+  # :clearance_sha 1, :authlogic_sha512 (then you should set stretches above to 20
   # for default behavior) and :restful_authentication_sha1 (then you should set
   # stretches to 10, and copy REST_AUTH_SITE_KEY to pepper).
   #
@@ -232,7 +232,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+   #config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

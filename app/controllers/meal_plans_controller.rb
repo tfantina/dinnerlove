@@ -1,5 +1,5 @@
 class MealPlansController < ApplicationController
-
+  before_action :authenticate_user!
     def show
       @meal_plan = MealPlan.find(params[:id])
       @meal_plans = user_meal_plans
