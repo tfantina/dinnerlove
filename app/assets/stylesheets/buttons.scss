@@ -27,9 +27,22 @@ a.button {
   background-color: $palm-green;
   transition: 0.3s;
 }
+
+.button-warn {
+  font-weight: 700;
+  color: $surf-blue-dark;
+  background-color: $coralfish-red;
+  transition: 0.3s;
+}
+
 .button-create:hover,
 .button-create:active {
   background-color: $palm-green-dark;
+}
+
+.button-warn:hover,
+.button-warn:active {
+  background-color: $coralfish-yellow;
 }
 
 .button-show {
@@ -74,4 +87,8 @@ a.button {
 .button-log-radius:only-of-type {
   border-radius: 9999px;
   border-width: 0px;
+}
+
+.button-radius {
+  border-radius: 99999px;
 }

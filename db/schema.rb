@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_125852) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "dinner_id"
     t.integer "meal_plan_id"
-    t.boolean "show_only_loved_meals"
+    t.boolean "show_only_loved_meals", default: false
     t.index ["dinner_id"], name: "index_users_on_dinner_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["meal_plan_id"], name: "index_users_on_meal_plan_id"

@@ -16,6 +16,9 @@ module DinnersHelper
     end
 
     def current_user_loves?(dinner)
+      if user_signed_in?
         dinner.loves.where(user_id: current_user.id).exists?
+      end
+
     end
 end
