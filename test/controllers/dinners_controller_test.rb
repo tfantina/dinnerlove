@@ -41,7 +41,7 @@ include FactoryBot::Syntax::Methods
   end
 
   test "should update dinner" do
-    patch dinner_url(@dinner), params: { dinner: { love: @dinner.love, name: @dinner.name, notes: @dinner.notes } }
+    patch dinner_url(@dinner), params: { dinner: { name: @dinner.name, notes: @dinner.notes } }
     assert_redirected_to @dinner
   end
 
