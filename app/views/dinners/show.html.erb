@@ -3,6 +3,12 @@
       <div class="dinner-card-header">
         <h2><%= @dinner.name %></h2>
       </div>
+      <% if @dinner.photo.attached? %>
+      <div class="card-img">
+          <%= image_tag @dinner.photo.variant(resize_to_fill: [500, 500]) %>
+        </div>
+
+        <% end %>
       <div class="dinner-card_body">
         <strong>Notes:</strong>
         <%= @dinner.notes %>

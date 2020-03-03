@@ -36,8 +36,13 @@ class DinnersController < ApplicationController
 
   # POST /dinners
   # POST /dinners.json
+  #for create and update actions image resizing should eventually be put into the dinner model
+  # I just can't get it working at the moment 
   def create
     @dinner = current_user.dinners.build(dinner_params)
+    shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
+    shrink_img.resize "500x500"
+
     respond_to do |format|
       if @dinner.save
         format.html { redirect_to @dinner, notice: 'Dinner was successfully created.' }
@@ -53,6 +58,9 @@ class DinnersController < ApplicationController
   # PATCH/PUT /dinners/1.json
   def update
     respond_to do |format|
+
+         shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
+         shrink_img.resize "500x500"
       if @dinner.update(dinner_params)
         format.html { redirect_to @dinner, notice: 'Dinner was successfully updated.' }
         format.json { render :show, status: :ok, location: @dinner }
@@ -109,7 +117,7 @@ class DinnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dinner_params
-      params.require(:dinner).permit(:name, :notes)
+      params.require(:dinner).permit(:name, :notes, :photo)
     end
 
     def already_loved?
