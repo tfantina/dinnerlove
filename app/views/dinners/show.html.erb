@@ -29,5 +29,5 @@
 </div>
 
 </div>
-<% edit = @dinner.user_id == current_user.id ? :edit : "" %>
-<%= render "/layouts/sub_footer", links: [:back, :add_dinner, edit] %>
+
+<%= render "/layouts/sub_footer", links: [:back, :add_dinner, :edit] %>

@@ -13,6 +13,7 @@ a.button {
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  display: block;
 }
 .button {
   padding-left: 0.75rem;
@@ -91,4 +92,10 @@ a.button {
 
 .button-radius {
   border-radius: 99999px;
+}
+
+.stacked-pad {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  //position: absolute;
 }
