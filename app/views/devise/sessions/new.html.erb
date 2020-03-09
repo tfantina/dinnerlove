@@ -20,11 +20,13 @@
           <%= f.label :remember_me %>
         </div>
       <% end %>
-
-        <%= f.submit "Log in", class: "button button-create button-radius" %>
-    <% end %>
-
-      <%= render "devise/shared/links" %>
+      <div class="flex center">
+        <div class="small-width">
+          <%= f.submit "Log in", class: "button button-create button-radius" %>
+      <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
 
   </div>
 </div>

@@ -55,6 +55,10 @@ class DinnersController < ApplicationController
     end
   end
 
+  def all
+    @dinners = Dinner.all
+  end
+
   # PATCH/PUT /dinners/1
   # PATCH/PUT /dinners/1.json
   def update

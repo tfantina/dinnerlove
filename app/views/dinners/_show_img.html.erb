@@ -1,0 +1,6 @@
+
+  <% if dinner.photo.attached? %>
+    <%= image_tag dinner.photo.variant(resize_to_fill: [500, 500]) %>
+  <% else %>
+    <%= image_tag "default.png" %>
+    <% end %>
