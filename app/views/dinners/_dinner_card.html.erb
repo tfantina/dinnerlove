@@ -23,6 +23,6 @@
         <%= button_to love_dinner_path(@dinner), method: "post", remote: true do %>
           <%= show_svg('heart') %>
         <% end %>
-        <div id="love-count-<%= @dinner.id %>"> x<%= @dinner.loves.count %></div>
+        <div id="love-count-<%= @dinner.id %>"><%= pluralize(@dinner.loves.count, "x total love") %></div>
     </div>
   </div>

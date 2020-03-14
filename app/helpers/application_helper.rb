@@ -3,7 +3,7 @@ module ApplicationHelper
     classes = "button button-create button-log-radius"
     case link
     when :view_dinners
-      link_to "Find Love", all_dinners_path, class: classes
+      link_to "Find Love", dinners_all_path, class: classes
     when :shuffle
       link_to "Shuffle", dinners_path, class: classes
     when :add_dinner

@@ -88,7 +88,12 @@ class DinnersController < ApplicationController
       end
     else
       @love = Love.find_by(user_id: current_user.id, dinner_id: params[:id])
-      @love.destroy
+      puts "THIS IS THE MAGIC OF DELETE"
+      respond_to do |format|
+        if @love.destroy
+          format.js
+        end
+      end
     end
   end
 
