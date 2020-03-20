@@ -2,6 +2,7 @@ class DinnersController < ApplicationController
   before_action :set_dinner, only: [:show, :edit, :update, :destroy]
   before_action :meal_plan_exists?, only: [:index]
   before_action :dinner_current_user, only: [:edit]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create, :toggle_love]
 
   # GET /dinners
   # GET /dinners.json
@@ -77,24 +78,19 @@ class DinnersController < ApplicationController
   end
 
   #Ability for a user to love a dinner (one user one love)
-  def love
+  def toggle_love
     if !already_loved?
       @dinner = Dinner.find(params[:id])
       @love = @dinner.loves.build(user_id: current_user.id)
-      respond_to do |format|
-        if @love.save
-          format.js
-        end
-      end
+      @love.save
+      @loved = true
     else
+      @dinner = Dinner.find(params[:id])
       @love = Love.find_by(user_id: current_user.id, dinner_id: params[:id])
-      puts "THIS IS THE MAGIC OF DELETE"
-      respond_to do |format|
-        if @love.destroy
-          format.js
-        end
-      end
-    end
+      @love.destroy
+      @loved = false
+
+  end
   end
 
   # DELETE /dinners/1
@@ -139,7 +135,7 @@ class DinnersController < ApplicationController
     end
 
     def already_loved?
-      Love.where(user_id: current_user.id, dinner_id: params[:id]).exists?
+        Love.where(user_id: current_user.id, dinner_id: params[:id]).exists?
     end
 
 end

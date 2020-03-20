@@ -1,0 +1,19 @@
+var dinnerId = '<%= @dinner.id %>'
+var dinnerLoveCount = <%= @dinner.loves.count %>
+var love = <%= @loved %>
+
+function toggleLoveButton(dinnerId, dinnerLoveCount, love) {
+  const loveMsg = document.getElementById(`user-status-${dinnerId}`)
+  const loveCount = document.getElementById(`love-count-${dinnerId}`)
+
+  if (love) {
+    loveCount.innerHTML = `${dinnerLoveCount} x total love`
+    loveMsg.innerHTML = "You love this dinner"
+  } else {
+    loveCount.innerHTML = `${dinnerLoveCount}x total love`
+    loveMsg.innerHTML = ""
+  }
+
+}
+
+toggleLoveButton(dinnerId, dinnerLoveCount, love);

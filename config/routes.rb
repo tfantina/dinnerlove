@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   root to: "dinners#index"
   devise_for :users
-  
+
   get 'dinners/all', to: 'dinners#all'
   resources :dinners do
     member do
-      post 'love'
-      delete 'love'
+      post 'love', to: "dinners#toggle_love"
     end
   end
 
