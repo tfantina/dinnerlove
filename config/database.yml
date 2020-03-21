@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: <%= ENV['DINNERLOVE_PGSQL_DB'] %>
+  username: <%= ENV['DINNERLOVE_PGSQL_USERNAME'] %>
+  password: <%= ENV['DINNERLOVE_PGSQL_PASSWORD'] %>
