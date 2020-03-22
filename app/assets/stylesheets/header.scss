@@ -10,9 +10,22 @@
 
 .header-logo {
   grid-column: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+
   h1 {
     color: $white;
   }
+  img {
+    grid-column: 2;
+    height: 60px;
+  }
+}
+
+.logo-txt {
+  font-size: 3em;
+  font-weight: bolder;
 }
 
 .header-links {

@@ -8,18 +8,25 @@
   }
 }
 
-a.button {
+a.button,
+input.button {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   display: block;
 }
+
+input.button {
+  width: 100%;
+  text-align: center;
+}
 .button {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  text-align: center;
 }
 
 .button-create {
@@ -85,10 +92,10 @@ a.button {
   border-bottom-right-radius: 9999px;
   border-top-right-radius: 9999px;
 }
-.button-log-radius:only-of-type {
-  border-radius: 9999px;
-  border-width: 0px;
-}
+// .button-log-radius:only-of-type {
+//   border-radius: 9999px;
+//   border-width: 0px;
+// }
 
 .button-radius {
   border-radius: 99999px;
