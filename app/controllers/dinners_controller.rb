@@ -122,7 +122,7 @@ class DinnersController < ApplicationController
     end
 
     def dinner_current_user
-      unless user_signed_in? && @dinner.user_id == current.id
+      unless user_signed_in? && @dinner.user_id == current_user.id
           redirect_to root_path
         end
 
