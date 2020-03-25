@@ -1,0 +1,30 @@
+@import "colors";
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 25vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $palm-green;
+  color: $white;
+}
+.footer-links {
+}
+.footer-bottom {
+  bottom: 0px;
+}
+a.footer-link {
+  color: $white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+a:hover.footer-link {
+  color: $sky-blue;
+}

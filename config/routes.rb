@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "dinners#index"
+  get 'about', to: 'static_pages#about'
   devise_for :users
 
   get 'dinners/all', to: 'dinners#all'

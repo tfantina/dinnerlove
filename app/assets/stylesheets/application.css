@@ -20,6 +20,11 @@
   display: flex;
 }
 
+.page-content {
+  min-height: 100vh;
+  position: relative;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;
