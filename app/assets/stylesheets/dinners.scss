@@ -89,7 +89,7 @@ div[id^="love-count"] {
   grid-gap: 5px;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1129px) {
   .dinner-array {
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@ div[id^="love-count"] {
   }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1129px) {
   .dinner-card:first-child {
     border-radius: 0 0 0 0.25rem;
   }

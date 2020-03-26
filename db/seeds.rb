@@ -23,6 +23,6 @@ dinners = Dinner.create!([{name: "Tofu teriyaki", notes: "Very yummy", user_id: 
                          {name: "Paella", user_id: 1, notes: "Original recipe from Hello Fresh"},
                          {name: "Cheese Tortellini", user_id: 1, notes: "Original recipe from Hello Fresh"},
                          {name: "Halloumi Salad", user_id: 1, notes: "Original recipe from Hello Fresh"},
-                         {name: "Halloumi and potato rosti", user_id: 1, note: "Original recipe from Hello Fresh"},
-                         {name: "Paneer and Sweet Potato Curry", user_id: 1, note: "Original recipe from Hello Fresh"},
-                         {name: "Bang Bang Tofu Bowl", user_id: 1, note: "Original recipe from Hello Fresh"}])
+                         {name: "Halloumi and potato rosti", user_id: 1, notes: "Original recipe from Hello Fresh"},
+                         {name: "Paneer and Sweet Potato Curry", user_id: 1, notes: "Original recipe from Hello Fresh"},
+                         {name: "Bang Bang Tofu Bowl", user_id: 1, notes: "Original recipe from Hello Fresh"}])

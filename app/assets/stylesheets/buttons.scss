@@ -106,3 +106,18 @@ input.button {
   margin-bottom: 5px;
   //position: absolute;
 }
+
+@media only screen and (max-width: 760px) {
+  .button-log {
+    display: inline-block;
+  }
+  .button-log-radius,
+  .button-log-radius:first-child,
+  .button-log-radius:last-child {
+    border-radius: 99999px;
+  }
+
+  .button {
+    margin: 5px;
+  }
+}

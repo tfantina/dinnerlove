@@ -40,19 +40,17 @@
 }
 
 .sm-width {
-  min-width: 6rem;
-  max-width: 9rem;
+  min-width: 60%;
 }
 .mid-width {
-  min-width: 40rem;
-  max-width: 100rem;
+  width: 100%;
 }
 
 .xl-width {
-  width: 60%;
+  width: 100%;
 }
 .max-width {
-  width: 90%;
+  width: 100%;
 }
 
 .headline {
@@ -61,11 +59,11 @@
 }
 .card {
   box-shadow: 2px 4px 6px hsla(200, 56%, 10%, 0.45);
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.7rem;
-  margin: 2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  margin: 2px;
   border-radius: 0.25rem;
 }
 
@@ -97,4 +95,48 @@
 
 .field {
   padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .sm-width {
+    min-width: 5rem;
+    max-width: 8rem;
+  }
+  .mid-width {
+    min-width: 40rem;
+    max-width: 100rem;
+  }
+
+  .xl-width {
+    width: 60%;
+  }
+  .max-width {
+    width: 90%;
+  }
+  .card {
+    padding: 2rem;
+    margin: 2rem;
+  }
+}
+
+@media only screen (min-width: 992px) {
+  .sm-width {
+    min-width: 6rem;
+    max-width: 9rem;
+  }
+  .mid-width {
+    min-width: 40rem;
+    max-width: 100rem;
+  }
+
+  .xl-width {
+    width: 60%;
+  }
+  .max-width {
+    width: 90%;
+  }
+  .card {
+    padding: 2rem;
+    margin: 2rem;
+  }
 }

@@ -28,3 +28,17 @@ a.footer-link {
 a:hover.footer-link {
   color: $sky-blue;
 }
+
+@media only screen and (max-width: 950px) {
+  .footer {
+    position: relative;
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .footer {
+    position: relative;
+    margin-top: 3rem;
+  }
+}
