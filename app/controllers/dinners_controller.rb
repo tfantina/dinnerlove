@@ -10,10 +10,8 @@ class DinnersController < ApplicationController
     @meal_plan = MealPlan.new
     @dinners = Dinner.all
     if user_signed_in? && current_user.show_only_loved_meals
-      puts "TRUTH TO THE POWA "
       loves = current_user.loves
       @dinners = Dinner.where(id: current_user.loves.pluck(:dinner_id))
-
       @seven_random_dinners = @dinners.sort{rand() - 0.5}[0..6]
     else
     @seven_random_dinners = Dinner.limit(7).order(Arel.sql('random()'))

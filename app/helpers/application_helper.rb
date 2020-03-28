@@ -2,8 +2,6 @@ module ApplicationHelper
   def link_builder(link)
     classes = "button button-create button-log-radius"
     case link
-    when :view_dinners
-      link_to "Find Love", dinners_all_path, class: classes
     when :shuffle
       link_to "Shuffle", dinners_path, class: classes
     when :add_dinner

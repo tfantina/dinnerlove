@@ -1,10 +1,10 @@
 <div class="flex center">
 
-
 <div class="button-log">
   <% links.each do |link| %>
     <%= link_builder(link) %>
   <% end %>
+  <%= link_to "Find Love", dinners_all_path, class: "button button-create button-log-radius" %>
 <% if user_signed_in?  %>
   <%= render "/meal_plans/new_meal", meals: @seven_random_dinners, user: current_user %>
 <% else %>
