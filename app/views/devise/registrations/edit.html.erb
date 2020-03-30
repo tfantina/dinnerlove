@@ -14,10 +14,13 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="field">
+      <% if current_user.loves.count >= 1 %>
+      <div class="field usr-check">
         <%= f.label "Only show meals you have loved?" %>
         <%= f.check_box :show_only_loved_meals %>
+        <span class="checkmark"></span>
       </div>
+      <% end %>
 
       <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

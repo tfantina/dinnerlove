@@ -1,4 +1,60 @@
+@import "colors";
+
 .cancel {
   padding-top: 2rem;
   margin-top: 2rem;
+}
+
+.usr-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+
+  user-select: none;
+}
+
+.usr-check input {
+  position: absolute;
+  opacity: 0;
+  height: 0px;
+  width: 0px;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 35px;
+  width: 35px;
+  background-color: $sky-blue;
+  border-color: $palm-green;
+  border-width: 0.4px;
+  border-radius: 999px;
+}
+
+.usr-check:hover input ~ .checkmark {
+  background-color: $palm-green;
+}
+.usr-check input:checked ~ .checkmark {
+  background-color: $palm-green;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.usr-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.usr-check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 10px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
 }

@@ -77,6 +77,7 @@ class DinnersController < ApplicationController
 
   #Ability for a user to love a dinner (one user one love)
   def toggle_love
+    user_toggle_loved
     if !already_loved?
       @dinner = Dinner.find(params[:id])
       @love = @dinner.loves.build(user_id: current_user.id)
@@ -134,6 +135,13 @@ class DinnersController < ApplicationController
 
     def already_loved?
         Love.where(user_id: current_user.id, dinner_id: params[:id]).exists?
+    end
+
+    #if a user's love drops below 14 they will start to see dinners they have not loved
+    def user_toggle_loved
+      if current_user.show_only_loved_meals && current_user.loves.count < 14
+        current_user.show_only_loved_meals = false
+      end
     end
 
 end
