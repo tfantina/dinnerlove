@@ -15,10 +15,12 @@
       <% end %>
 
       <% if current_user.loves.count >= 1 %>
-      <div class="field usr-check">
+      <div class="field container">
+        <label class="usr-check">
         <%= f.label "Only show meals you have loved?" %>
         <%= f.check_box :show_only_loved_meals %>
         <span class="checkmark"></span>
+        </label>
       </div>
       <% end %>
 

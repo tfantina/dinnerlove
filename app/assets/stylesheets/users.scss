@@ -25,12 +25,13 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 35px;
-  width: 35px;
+  height: 25px;
+  width: 25px;
   background-color: $sky-blue;
   border-color: $palm-green;
   border-width: 0.4px;
   border-radius: 999px;
+  transition: 0.5s;
 }
 
 .usr-check:hover input ~ .checkmark {
@@ -51,10 +52,14 @@
 }
 
 .usr-check .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 10px;
-  height: 8px;
+  left: 7px;
+  top: 4px;
+  width: 8px;
+  height: 14px;
   border: solid white;
+
   border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
