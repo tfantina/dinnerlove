@@ -1,0 +1,27 @@
+<div class="dinner-card shadow-lg">
+  <div class="dinner-card-header font-semi-bold text-gray-700 mb-2">
+        <%= link_to dinner.name, dinner_path(dinner) %>
+  </div>
+  <div class="dinner-card-body long">
+
+          <div class="card-img-md">
+    <% if dinner.photo.attached? %>
+      <%= image_tag dinner.photo.variant(resize_to_fill: [500, 500]) %>
+    <% else %>
+      <%= image_tag "default.png", height: '500' %>
+    <% end %>
+      </div>
+
+  </div>
+    <div class="love">
+      <div id="user-status-<%= dinner.id %>">
+      <% if current_user_loves?(dinner) %>
+        You love this dinner.
+      <% end %>
+      </div>
+      <%= link_to love_dinner_path(dinner), method: "post", remote: true do %>
+        <%= show_svg('heart') %>
+      <% end %>
+      <div id="love-count-<%= dinner.id %>"><%= pluralize(dinner.loves.count, "x total love") %></div>
+  </div>
+</div>

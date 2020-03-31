@@ -5,31 +5,7 @@
   </div>
 <div class="grid-layout center max-width">
 <% @dinners.each do |dinner| %>
-<div class="dinner-card shadow-lg">
-  <div class="dinner-card-header">
-    <h2><%= dinner.name %></h2>
-  </div>
-  <div class="card-img-md">
-      <%= render 'dinners/show_img', dinner: dinner %>
-  </div>
-
-  <div class="dinner-card_body">
-    <strong>Notes:</strong>
-    <%= dinner.notes.to_s.truncate(35, omission: '...') %>
-  </div>
-  <div class="love">
-    <div id="user-status-<%= dinner.id %>">
-      <% if current_user_loves?(dinner) %>
-      You love this dinner.
-      <% end %>
-    </div>
-    <%= button_to love_dinner_path(dinner), method: "post", remote: true do %>
-    <%= show_svg('heart') %>
-    <% end %>
-
-    x<%= dinner.loves.count %>
-  </div>
-</div>
+  <%= render "general_dinner_card", dinner: dinner %>
 <% end %>
 
 </div>
