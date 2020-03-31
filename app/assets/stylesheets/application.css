@@ -111,6 +111,10 @@ p.info {
   padding-bottom: 1rem;
 }
 
+.content {
+  padding-bottom: 26vh;
+}
+
 @media only screen and (min-width: 600px) {
   h2.info {
     font-size: 2rem;

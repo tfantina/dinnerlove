@@ -1,33 +1,5 @@
-<div class="flex center">
-    <div class="dinner-card shadow-lg">
-      <div class="dinner-card-header">
-        <h2><%= @dinner.name %></h2>
-      </div>
-      <% if @dinner.photo.attached? %>
-      <div class="card-img">
-          <%= image_tag @dinner.photo.variant(resize_to_fill: [500, 500]) %>
-        </div>
-
-        <% end %>
-      <div class="dinner-card_body">
-        <strong>Notes:</strong>
-        <%= @dinner.notes %>
-        </div>
-        <div class="love">
-          <div id="user-status-<%= @dinner.id %>">
-            <% if current_user_loves?(@dinner) %>
-              You love this dinner.
-              <% end %>
-              </div>
-              <%= button_to love_dinner_path(@dinner), method: "post", remote: true do %>
-                <%= show_svg('heart') %>
-              <% end %>
-
-          x<%= @dinner.loves.count %>
-        </div>
-
-</div>
-
+<div class="center flex">
+  <%= render "general_dinner_card", dinner: @dinner %>
 </div>
 
 <%= render "/layouts/sub_footer", links: [:back, :add_dinner, :edit] %>
