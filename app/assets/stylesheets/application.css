@@ -103,7 +103,7 @@ p.info {
 }
 .card-img-sm {
   width: 100%;
-  height: 4rem;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -112,7 +112,11 @@ p.info {
 }
 
 .content {
-  padding-bottom: 26vh;
+  padding-bottom: 28vh;
+}
+
+.padding {
+  padding: 2rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -149,8 +153,7 @@ p.info {
     max-width: 9rem;
   }
   .mid-width {
-    min-width: 40rem;
-    max-width: 100rem;
+    width: 40rem;
   }
 
   .xl-width {
@@ -162,5 +165,10 @@ p.info {
   .card {
     padding: 2rem;
     margin: 2rem;
+  }
+  .card-img-sm {
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
   }
 }

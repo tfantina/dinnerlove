@@ -40,8 +40,11 @@ class DinnersController < ApplicationController
   # I just can't get it working at the moment
   def create
     @dinner = current_user.dinners.build(dinner_params)
-    shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
-    shrink_img.resize "500x500"
+
+    if(params[:dinner][:photo])
+      shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
+      shrink_img.resize "500x500"
+    end
 
     respond_to do |format|
       if @dinner.save

@@ -83,7 +83,7 @@ div[id^="love-count"] {
 
 .grid-layout {
   display: grid;
-  padding: 2rem;
+  padding: 0px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 5px;
@@ -117,5 +117,15 @@ div[id^="love-count"] {
 
   .dinner-card:nth-child(2n) {
     border-left-width: 0px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-layout {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 5px;
   }
 }
