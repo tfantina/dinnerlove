@@ -25,8 +25,10 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
 gem 'devise'
+
+# Sentry
+gem "sentry-raven"
 
 #Image processing
 gem "image_processing", "~> 1.0"
@@ -65,8 +67,7 @@ end
 
 group :production do
   gem 'pg'
-  # Sentry
-  gem "sentry-raven"
+  gem 'sendgrid-ruby'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

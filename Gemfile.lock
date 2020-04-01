@@ -219,6 +219,7 @@ GEM
     ruby-vips (2.0.17)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
+    ruby_http_client (3.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -234,6 +235,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sendgrid-ruby (6.1.2)
+      ruby_http_client (~> 3.4)
     sentry-raven (3.0.0)
       faraday (>= 1.0)
     shellany (0.0.1)
@@ -302,6 +305,7 @@ DEPENDENCIES
   rails (~> 6.0.0.rc2)
   sass-rails (~> 5)
   selenium-webdriver
+  sendgrid-ruby
   sentry-raven
   spring
   spring-watcher-listen (~> 2.0.0)
