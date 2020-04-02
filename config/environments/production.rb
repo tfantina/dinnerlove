@@ -62,9 +62,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'no-reply@example.com'}
+  config.action_mailer.default_url_options = { host: 'dinnerlove.herokuapp.com' }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => '587',
     :authentication => :plain ,
@@ -73,9 +77,6 @@ Rails.application.configure do
     :domain => 'heroku.com',
     :enable_starttls_auto => true
   }
-  config.action_mailer.raise_delivery_errors = true 
-  config.action_mailer.default_options = {from: 'no-reply@example.com'}
-  config.action_mailer.default_url_options = { host: 'dinnerlove.herokuapp.com' }
 
 
 
