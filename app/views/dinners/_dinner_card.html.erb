@@ -4,16 +4,20 @@
       <% @dinner = Dinner.find_by(id: dinner[:dinner]) %>
     </div>
     <div class="dinner-card-body">
-
             <div class="card-img-sm">
+                  <%= link_to dinner_path(@dinner) do %>
       <% if @dinner.photo.attached? %>
         <%= image_tag @dinner.photo.variant(resize_to_fill: [500, 500]) %>
       <% else %>
         <%= image_tag "default.png" %>
       <% end %>
+            <% end %>
         </div>
+
+
         <%= link_to @dinner.name, dinner_path(@dinner) %>
     </div>
+
       <div class="love">
         <div id="user-status-<%= @dinner.id %>">
         <% if current_user_loves?(@dinner) %>

@@ -14,9 +14,11 @@
     <% end %>
 
   </div>
-  <% if params[:action] == :show %>
-    <%= dinner.notes  %>
+  <div class="notes">
+  <% if params[:action] === "show" %>
+    <strong>Notes:</strong> <%= dinner.notes  %>
   <% end %>
+  </div>
     <div class="love">
       <div id="user-status-<%= dinner.id %>">
       <% if current_user_loves?(dinner) %>

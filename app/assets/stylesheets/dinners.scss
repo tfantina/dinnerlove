@@ -30,6 +30,11 @@
   min-height: 6rem;
 }
 
+.notes {
+  padding: 5px;
+  max-height: 50px;
+  overflow: scroll;
+}
 .love {
   display: grid;
   grid-template-columns: 30px auto;
@@ -39,6 +44,9 @@
   overflow: hidden;
   grid-gap: 10px;
   padding: 2px 4px 2px 4px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 .love svg {
@@ -63,12 +71,14 @@
 }
 
 div[id^="user-status"] {
-  grid-row: 1;
-  grid-column: 2;
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 10px;
 }
 div[id^="love-count"] {
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 2;
 }
 .dinner-array {
@@ -89,14 +99,14 @@ div[id^="love-count"] {
   grid-gap: 5px;
 }
 
-@media only screen and (max-width: 1129px) {
+@media only screen and (min-width: 1129px) {
   .dinner-array {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .dinner-card {
-    min-width: 20rem;
+    min-width: 10rem;
     margin-bottom: 1rem;
     border-width: 1px;
     border-radius: 0 0 0.25rem 0.25rem;

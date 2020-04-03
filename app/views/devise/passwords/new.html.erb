@@ -1,7 +1,6 @@
 <div class="flex center">
   <div class="card mid-width">
     <div class="card-header">
-
     <h2>Forgot your password?</h2>
 
     </div>
@@ -13,12 +12,16 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearence-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outlineshadow appearence-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Send me reset password instructions", class: "button button-create button-radius" %>
-      </div>
-    <% end %>
+    <div class="flex center">
+      <div class="small-width">
+        <div class="actions">
+          <%= f.submit "Send me reset", class: "button button-create button-radius" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
 
-    <%= render "devise/shared/links" %>
 
   </div>
 </div>

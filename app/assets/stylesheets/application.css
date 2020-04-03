@@ -29,6 +29,30 @@ h3.info {
 p.info {
   margin-top: 0.5rem;
 }
+p.notice {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #90e4b4;
+  color: #0b1e28;
+  border: 1px solid #0c3d21;
+  border-radius: 2px;
+}
+p.alert {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f4aaaa;
+  color: #0b1e28;
+  border: 1px solid #f97777;
+  border-radius: 2px;
+}
 
 .flex {
   display: flex;

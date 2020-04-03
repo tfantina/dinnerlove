@@ -14,8 +14,13 @@
   <body>
     <div class="page-content">
       <%= render "layouts/header" %>
-      <p class="notice"><%= notice %></p>
+      <% if flash[:notice] %>
+       <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
+    
+      <% end %>
       <div class="content">
       <%= yield %>
       </div>
