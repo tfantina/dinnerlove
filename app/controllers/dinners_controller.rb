@@ -9,13 +9,15 @@ class DinnersController < ApplicationController
   def index
     @meal_plan = MealPlan.new
     @dinners = Dinner.all
-    if user_signed_in? && current_user.show_only_loved_meals
+    if user_signed_in? && enough_love?
       loves = current_user.loves
       @dinners = Dinner.where(id: current_user.loves.pluck(:dinner_id))
       @seven_random_dinners = @dinners.sort{rand() - 0.5}[0..6]
+        puts "THESE ARE THEM #{@seven_random_dinners}"
     else
     @seven_random_dinners = Dinner.limit(7).order(Arel.sql('random()'))
-  end
+
+    end
   end
 
   # GET /dinners/1
@@ -144,6 +146,12 @@ class DinnersController < ApplicationController
     def user_toggle_loved
       if current_user.show_only_loved_meals && current_user.loves.count < 14
         current_user.show_only_loved_meals = false
+      end
+    end
+
+    def enough_love?
+      if current_user.show_only_loved_meals
+        current_user.loves.count >= 14
       end
     end
 
