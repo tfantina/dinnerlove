@@ -60,7 +60,7 @@ class DinnersController < ApplicationController
   end
 
   def all
-    @dinners = Dinner.all
+    @dinners = Dinner.all.order("RANDOM()")
   end
 
   # PATCH/PUT /dinners/1

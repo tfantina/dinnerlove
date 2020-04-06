@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   transition: 1s;
+  margin-bottom: 2rem;
 }
 
 .dinner-card:hover {
@@ -27,7 +28,7 @@
   font-size: 0.8rem;
   color: #000;
   padding: 2px 4px 2px 4px;
-  min-height: 6rem;
+  max-height: 600px;
 }
 
 .notes {
@@ -78,6 +79,7 @@ div[id^="user-status"] {
   font-size: 10px;
 }
 div[id^="love-count"] {
+  font-size: 0.7rem;
   grid-row: 1;
   grid-column: 2;
 }
@@ -86,9 +88,13 @@ div[id^="love-count"] {
   padding-bottom: 2em;
   max-width: 935px;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dinner-name {
+  height: 3rem;
+  font-size: 1rem;
 }
 
 .grid-layout {
@@ -105,8 +111,10 @@ div[id^="love-count"] {
     flex-direction: column;
     align-items: center;
   }
+
   .dinner-card {
-    min-width: 10rem;
+    width: 13rem;
+    height: 14rem;
     margin-bottom: 1rem;
     border-width: 1px;
     border-radius: 0 0 0.25rem 0.25rem;
@@ -118,6 +126,18 @@ div[id^="love-count"] {
 }
 
 @media only screen and (min-width: 1129px) {
+  .dinner-array {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .dinner-card {
+    max-width: 12rem;
+  }
+
   .dinner-card:first-child {
     border-radius: 0 0 0 0.25rem;
   }
@@ -127,6 +147,31 @@ div[id^="love-count"] {
 
   .dinner-card:nth-child(2n) {
     border-left-width: 0px;
+  }
+
+  .dinner-card-body {
+    height: 8.2rem;
+  }
+
+  .dinner-name {
+    height: 2.2rem;
+    font-size: 0.8rem;
+  }
+
+  .love {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: 20px auto;
+    grid-gap: 4px;
+    max-width: 100%;
+    overflow: hidden;
+    grid-gap: 10px;
+    margin-top: 5px;
+    justify-content: center;
+    padding: 0px;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-bottom: 0px;
   }
 }
 

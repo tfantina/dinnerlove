@@ -38,10 +38,35 @@
   a:active {
     text-decoration: underline;
   }
+  .menubox {
+    display: block;
+  }
+}
+
+.header-links > ul li:not(:first-child) {
+  display: none;
+}
+
+.header-linksresponsive {
+  width: 100%;
+  position: absolute;
+  top: 70px;
+  background-color: $palm-green;
+  color: $white;
+  ul li {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .logo-txt {
     font-size: 3rem;
+  }
+  .header-links {
+    .menubox {
+      display: none;
+    }
   }
 }

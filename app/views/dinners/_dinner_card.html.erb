@@ -13,11 +13,11 @@
       <% end %>
             <% end %>
         </div>
-
-
+        <div class="dinner-name">
         <%= link_to @dinner.name, dinner_path(@dinner) %>
+        </div>
     </div>
-
+    <div class="dinner-card-footer">
       <div class="love">
         <div id="user-status-<%= @dinner.id %>">
         <% if current_user_loves?(@dinner) %>
@@ -28,5 +28,6 @@
           <%= show_svg('heart') %>
         <% end %>
         <div id="love-count-<%= @dinner.id %>"><%= pluralize(@dinner.loves.count, "x total love") %></div>
+    </div>
     </div>
   </div>

@@ -1,13 +1,16 @@
-
 <div class="header">
   <div class="header-logo">
     <%= image_tag "lovacodo.png", class: 'logo' %>
     <h1 class="logo-txt">DinnerLove</h1>
   </div>
-  <div class="header-links">
+  <div class="header-links" id="header-nav">
     <% if user_signed_in? then %>
-      <%= link_to "Settings", edit_user_registration_path %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <% end %>
+    <ul>
+      <li><a href="javascript:void(0)" class="menubox" id="menubox">Menu</a></li>
+      <li><%= link_to "Settings", edit_user_registration_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <% end %>
+      </ul>
+
     </div>
 </div>
