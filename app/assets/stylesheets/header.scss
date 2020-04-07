@@ -50,6 +50,7 @@
 .header-linksresponsive {
   width: 100%;
   position: absolute;
+  z-index: 20;
   top: 70px;
   background-color: $palm-green;
   color: $white;

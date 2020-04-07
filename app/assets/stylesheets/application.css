@@ -54,6 +54,22 @@ p.alert {
   border-radius: 2px;
 }
 
+ol li.list {
+  counter-increment: list;
+}
+ol li.list:before {
+  color: #1c924f;
+  content: counter(list) ".";
+}
+
+li.list {
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+.padding-mid {
+  padding: 1rem;
+}
+
 .flex {
   display: flex;
 }
