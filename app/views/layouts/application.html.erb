@@ -19,12 +19,13 @@
       <% end %>
       <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
-    
+
       <% end %>
       <div class="content">
       <%= yield %>
       </div>
       <%= render "layouts/footer" %>
+      <%= render "layouts/cookies" %>
     </div>
   </body>
 </html>
