@@ -4,11 +4,25 @@
 
 @import "colors";
 
+.card-img {
+  width: 100%;
+  overflow: hidden;
+}
+.card-img-md {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.card-img-sm {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
 .dinner-card {
-  border-color: #9ae6b4;
-  border-width: 0.4px;
-  min-width: 10rem;
-  min-height: 12rem;
+  border-color: rgba(#9ae6b4, 0.57);
+  border-width: 0.5px;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   transition: 1s;
@@ -27,44 +41,53 @@
 .dinner-card-body {
   font-weight: bold;
   font-size: 0.8rem;
+  padding-bottom: 8px;
   color: #000;
-  padding: 2px 4px 2px 4px;
   max-height: 600px;
 }
 
+.dinner-name {
+  height: 25px;
+  padding: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .notes {
-  padding: 5px;
+  padding: 8px;
   max-height: 50px;
   overflow: scroll;
 }
 .love {
   display: grid;
-  grid-template-columns: 30px auto;
-  grid-template-rows: 20px auto;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 20px 20px;
   grid-gap: 4px;
-  max-width: 100%;
+  max-width: 150px;
+  height: 40px;
   overflow: hidden;
-  grid-gap: 10px;
   padding: 2px 4px 2px 4px;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
 }
 
 .love svg {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   fill: $love-red;
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
   z-index: 0;
   grid-column: 1;
   grid-row: span 2;
   transition: 0.2s;
+  padding-right: 10px;
 }
 
 .love svg:hover {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   fill: $deep-love;
   filter: drop-shadow(3px 3px 7px rgba(0, 0, 0, 0.5));
   z-index: 0;
@@ -74,12 +97,12 @@
 
 div[id^="user-status"] {
   grid-row: 2;
-  grid-column: 1 / span 2;
-  margin-left: auto;
-  margin-right: auto;
+  grid-column: 2;
   font-size: 10px;
 }
 div[id^="love-count"] {
+  display: flex;
+  align-items: center;
   font-size: 0.7rem;
   grid-row: 1;
   grid-column: 2;
@@ -93,17 +116,22 @@ div[id^="love-count"] {
   align-items: center;
 }
 
-.dinner-name {
-  height: 3rem;
-  font-size: 1rem;
-}
-
 .grid-layout {
   display: grid;
   padding: 0px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-layout {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+  }
 }
 
 @media only screen and (min-width: 1129px) {
@@ -118,7 +146,7 @@ div[id^="love-count"] {
 
   .dinner-card {
     max-width: 500px;
-    max-height: 600px;
+    height: 220px;
     margin-bottom: 1rem;
     border-width: 1px;
     border-radius: 0 0 0.25rem 0.25rem;
@@ -147,31 +175,50 @@ div[id^="love-count"] {
     height: 2.2rem;
     font-size: 0.8rem;
   }
+  .dinner-card-body {
+    height: 220px;
+  }
+
+  .card-img-sm {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
 
   .love {
     display: grid;
-    grid-template-columns: 30px auto;
-    grid-template-rows: 20px auto;
-    grid-gap: 4px;
-    max-width: 100%;
-    height: 50px;
+    grid-template-columns: 30px 90px;
+    grid-template-rows: auto;
+    width: 100%;
+    height: 30px;
     overflow: hidden;
-    grid-gap: 10px;
     margin-top: 5px;
     justify-content: center;
     padding: 0px;
-    margin-top: 5px;
-    margin-left: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
-@media only screen and (min-width: 600px) {
-  .grid-layout {
-    display: grid;
-    padding: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: auto;
-    grid-gap: 5px;
+  .love svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  .love svg:hover {
+    height: 30px;
+    width: 30px;
+  }
+
+  div[id^="user-status"] {
+    display: none;
+    grid-row: 1;
+  }
+  div[id^="love-count"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    grid-column: 2;
+    grid-row: 1;
   }
 }

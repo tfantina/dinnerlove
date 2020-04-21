@@ -1,5 +1,5 @@
   <div class="dinner-card shadow-lg">
-    <div class="dinner-card-header font-semi-bold text-gray-700 mb-2">
+    <div class="dinner-card-header font-semi-bold text-gray-700">
       <%= dinner[:day] %>
       <% @dinner = Dinner.find_by(id: dinner[:dinner]) %>
     </div>
@@ -27,7 +27,7 @@
         <%= link_to love_dinner_path(@dinner), method: "post", remote: true do %>
           <%= show_svg('heart') %>
         <% end %>
-        <div id="love-count-<%= @dinner.id %>"><%= pluralize(@dinner.loves.count, "x total love") %></div>
+        <div id="love-count-<%= @dinner.id %>"><%= pluralize(@dinner.loves.count, "love") %></div>
     </div>
     </div>
   </div>
