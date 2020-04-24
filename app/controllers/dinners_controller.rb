@@ -68,8 +68,11 @@ class DinnersController < ApplicationController
   def update
     respond_to do |format|
 
+      if(params[:dinner][:photo])
          shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
          shrink_img.resize "500x500"
+      end
+      
       if @dinner.update(dinner_params)
         format.html { redirect_to @dinner, notice: 'Dinner was successfully updated.' }
         format.json { render :show, status: :ok, location: @dinner }
