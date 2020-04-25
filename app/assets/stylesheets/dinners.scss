@@ -20,7 +20,7 @@
 }
 
 .dinner-card {
-  border-color: rgba(#9ae6b4, 0.57);
+  border-color: rgba(#1c934f, 0.3);
   border-width: 0.5px;
   min-width: 150px;
   display: flex;
@@ -191,7 +191,8 @@ div[id^="love-count"] {
     border-radius: 0px;
   }
   .dinner-card:nth-child(2n) {
-    border-left-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
   }
 
   .dinner-card:first-child {
@@ -199,10 +200,6 @@ div[id^="love-count"] {
   }
   .dinner-card:last-child {
     border-radius: 0 0 8px 0;
-  }
-
-  .dinner-card:nth-child(2n) {
-    border-left-width: 0px;
   }
 
   .dinner-card-body {
