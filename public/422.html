@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <head>
+    <title>Sorry! (422)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      .error-page {
+        background-color: #ffffff;
+        color: #0b1e28;
+        text-align: center;
+        font-family: arial, sans-serif;
+        margin: 0;
+      }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+      .error-page div.dialog {
+        width: 45%;
+        max-width: 33em;
+        margin: 4em auto 0;
+      }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      .error-page div.dialog  {
+        display: flex;
+        border: 1px;
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+        border-top: #1c924f solid 20px;
+        border-bottom: #1c924f solid 50px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        background-color: white;
+        padding: 10px 50px 0;
+        box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+      }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+      .error-page h1 {
+        font-size: 100%;
+        color: #1c924f;
+        line-height: 1.5em;
+      }
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      .error-page div.dialog > p {
+        margin: 0 0 1em;
+        padding: 1em;
+        background-color: #f7f7f7;
+        border: 1px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-color: #dadada;
+        color: #666;
+        box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+      }
+    </style>
+  </head>
+
+  <body class="error-page">
+
+    <div class="dialog">
+      <div class="cado">
+        <img src="https://dinnerlove.herokuapp.com/assets/lovacodo-f823aeb4358c5da29bbfe5c5c0d2b6f612e63961b6434a89ae6693a74044d66a.png" alt="Avocodo"/>
+      </div>
+      <div>
+        <h1>The change you wanted was rejected.</h1>
+        <p>Maybe you tried to change something you didn't have access to.</p>
+        <p>
+          Click <a href="/">here to visit</a> the main page.
+        </p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  </body>
 </html>
