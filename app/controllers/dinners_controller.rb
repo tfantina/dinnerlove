@@ -34,6 +34,7 @@ class DinnersController < ApplicationController
 
   # GET /dinners/1/edit
   def edit
+    @tags = Tag.all
   end
 
   # POST /dinners
@@ -67,12 +68,13 @@ class DinnersController < ApplicationController
   # PATCH/PUT /dinners/1.json
   def update
     respond_to do |format|
-
       if(params[:dinner][:photo])
          shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
          shrink_img.resize "500x500"
       end
-      
+      puts "#{params[:dinner][:tag]} OK PARAMS"
+      save_tags(@dinner, params[:dinner][:tag])
+
       if @dinner.update(dinner_params)
         format.html { redirect_to @dinner, notice: 'Dinner was successfully updated.' }
         format.json { render :show, status: :ok, location: @dinner }
@@ -138,9 +140,19 @@ class DinnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dinner_params
-      params.require(:dinner).permit(:name, :notes, :photo)
+      params.require(:dinner).permit(:name, :notes, :photo, tags: [] )
     end
 
+    def save_tags(dinner, tags)
+      puts "#{tags} WOW"
+      tags.each do |tag|
+        puts tag
+        @tag = Tag.find_by(id: tag)
+        puts @tag.name
+        @dinner_tag = dinner.dinner_tags.build(tag: Tag.find_by(id: tag))
+      end
+
+    end
     def already_loved?
         Love.where(user_id: current_user.id, dinner_id: params[:id]).exists?
     end

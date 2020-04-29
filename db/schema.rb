@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_131938) do
+ActiveRecord::Schema.define(version: 2020_04_27_130535) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2020_02_28_131938) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "dinner_tags", force: :cascade do |t|
+    t.integer "dinner_id"
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dinner_id"], name: "index_dinner_tags_on_dinner_id"
+    t.index ["tag_id"], name: "index_dinner_tags_on_tag_id"
   end
 
   create_table "dinners", force: :cascade do |t|
@@ -66,6 +75,12 @@ ActiveRecord::Schema.define(version: 2020_02_28_131938) do
     t.index ["meal_plan_id"], name: "index_meals_on_meal_plan_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -84,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_131938) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "dinner_tags", "tags"
   add_foreign_key "dinners", "users"
   add_foreign_key "loves", "dinners"
   add_foreign_key "loves", "users"

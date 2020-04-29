@@ -26,7 +26,14 @@
 
   <div class="field">
       <%= form.file_field :photo %>
+  </div>
 
+  <div class="field">
+    <%= form.label :tags, class: "block text-gray-900 font-semibold mb-2" %>
+    <% @tags.each do |tag| %>
+      <%= form.label tag.name %>
+      <%= check_box_tag("dinner[tag][]", tag.id) %>
+      <% end %>
   </div>
 
   <div class="flex justify-center">

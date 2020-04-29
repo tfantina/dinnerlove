@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get "tags", to: "tags#new"
+  post "tags", to: "tags#create"
+
 
   resources :meal_plans, only: [:create, :show]
 
