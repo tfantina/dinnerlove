@@ -1,4 +1,6 @@
- require_relative 'boot'
+# frozen_string_literal: true
+
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -19,7 +21,7 @@ module Dinnerlove
 
     Raven.configure do |config|
       config.dsn = Rails.application.credentials.dig(:sentry_url)
-      config.environments = %w[ production ]
+      config.environments = %w[production]
     end
   end
 end

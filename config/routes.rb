@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root to: "dinners#index"
+  root to: 'dinners#index'
   get 'about', to: 'static_pages#about'
   devise_for :users
 
   get 'dinners/all', to: 'dinners#all'
   resources :dinners do
     member do
-      post 'love', to: "dinners#toggle_love"
+      post 'love', to: 'dinners#toggle_love'
     end
   end
 
