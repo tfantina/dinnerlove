@@ -97,6 +97,34 @@ input.button {
 //   border-width: 0px;
 // }
 
+.file-input-wrap {
+  width: 200px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+}
+.file-input-wrap > input[type="file"] {
+  font-size: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.file-input-wrap > .btn-file-input {
+  display: inline-block;
+  font-weight: 700;
+  color: $white;
+  background-color: $surf-blue;
+  transition: 0.3s;
+  border-radius: 99999px;
+}
+
+.file-input-wrap > .btn-file-input:hover,
+.btn-file-input:active {
+  color: $white;
+  background-color: $surf-blue-dark;
+}
+
 .button-radius {
   border-radius: 99999px;
 }

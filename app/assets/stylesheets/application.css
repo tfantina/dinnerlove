@@ -159,6 +159,36 @@ li.list {
   padding: 2rem;
 }
 
+.check-btn {
+  border: solid 2px #1c924f;
+  border-radius: 50px;
+  background-color: #fff;
+  float: left;
+  margin: 4px;
+}
+
+.check-btn label {
+  color: #1c924f;
+  display: block;
+}
+
+.check-btn input {
+  position: absolute;
+  top: -20px;
+}
+
+.check-btn label span {
+  overflow: hidden;
+  padding: 4px;
+  display: block;
+}
+
+.check-btn input:checked + span {
+  background-color: #1c924f;
+  color: #fff;
+  border-radius: 50px;
+}
+
 @media only screen and (min-width: 600px) {
   h2.info {
     font-size: 2rem;

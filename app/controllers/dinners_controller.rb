@@ -29,7 +29,7 @@ class DinnersController < ApplicationController
   # GET /dinners/new
   def new
     @dinner = Dinner.new
-
+    @tags = Tag.all
   end
 
   # GET /dinners/1/edit
@@ -98,8 +98,7 @@ class DinnersController < ApplicationController
       @love = Love.find_by(user_id: current_user.id, dinner_id: params[:id])
       @love.destroy
       @loved = false
-
-  end
+    end
   end
 
   # DELETE /dinners/1

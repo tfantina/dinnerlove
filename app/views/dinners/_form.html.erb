@@ -24,16 +24,22 @@
     <%= form.text_area :notes, placeholder: "recipe, notes, url, etc.", class: "shadow appearence-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" %>
   </div>
 
-  <div class="field">
+  <div class="field file-input-wrap">
+      <button class="button btn-file-input">Add a photo</button>
       <%= form.file_field :photo %>
   </div>
 
   <div class="field">
-    <%= form.label :tags, class: "block text-gray-900 font-semibold mb-2" %>
+    <%= form.label "This dinner is:", class: "block text-gray-900 font-semibold mb-2" %>
+    <div class="flex">
     <% @tags.each do |tag| %>
-      <%= form.label tag.name %>
-      <%= check_box_tag("dinner[tag][]", tag.id) %>
+      <div class="check-btn">
+        <label>
+        <%= check_box_tag "dinner[tag][]", tag.id %><span>  <%=  tag.name %></span>
+        </label>
+        </div>
       <% end %>
+    </div>
   </div>
 
   <div class="flex justify-center">
