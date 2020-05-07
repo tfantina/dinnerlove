@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit :account_update, keys: [:show_only_loved_meals]
+    devise_parameter_sanitizer.permit :account_update, keys:
+                                          [:show_only_loved_meals, tag_ids: []]
   end
 
   def get_dinners

@@ -17,12 +17,24 @@
       <% if current_user.loves.count >= 1 %>
       <div class="field container">
         <label class="usr-check">
-        <%= f.label "Only show meals you have loved?" %>
+        <%= f.label "Only plan meals you have loved?" %>
         <%= f.check_box :show_only_loved_meals %>
         <span class="checkmark"></span>
         </label>
       </div>
       <% end %>
+
+      <div class="field tags-field">
+        <%= f.label "Only plan meals with these tags:" %>
+        <br />
+        <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| %>
+        <div class="check-btn">
+          <label>
+            <%= tag.check_box %><span><%= tag.text %></span>
+          </label>
+        </div>
+        <% end %>
+      </div>
 
       <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

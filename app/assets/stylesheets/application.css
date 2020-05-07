@@ -189,6 +189,10 @@ li.list {
   border-radius: 50px;
 }
 
+.tags-field {
+  display: inline-block;
+}
+
 @media only screen and (min-width: 600px) {
   h2.info {
     font-size: 2rem;
