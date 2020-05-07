@@ -23,9 +23,10 @@
     <strong>Notes:</strong> <%= dinner.notes  %>
   <% end %>
   </div>
-  <div class="wow">
+  <div class="tags">
+    <strong>Tags: </strong>
     <% dinner.tags.each do |tag| %>
-      <%= tag.name %>
+      <div class="tag font-bold"><%= tag.name %></div>
     <% end %>
    </div>
   <div class="dinner-card-footer">

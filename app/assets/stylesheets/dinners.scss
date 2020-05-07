@@ -124,6 +124,19 @@ div[id^="love-count"] {
   grid-gap: 5px;
 }
 
+.tags {
+  margin: 10px;
+}
+
+.tag {
+  display: inline-block;
+  text-align: center;
+  border: solid 3px $palm-green;
+  border-radius: 9999px;
+  color: $palm-green;
+  padding: 0.1rem 0.4rem 0.1rem 0.4rem;
+}
+
 @media only screen and (min-width: 600px) {
   .grid-layout {
     display: grid;

@@ -32,13 +32,15 @@
   <div class="field">
     <%= form.label "This dinner is:", class: "block text-gray-900 font-semibold mb-2" %>
     <div class="flex">
-    <% @tags.each do |tag| %>
-      <div class="check-btn">
+        <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| %>
+        <div class="check-btn">
         <label>
-        <%= check_box_tag "dinner[tag][]", tag.id %><span>  <%=  tag.name %></span>
-        </label>
+          <%= tag.check_box %><span><%= tag.text %></span>
+          </label>
         </div>
-      <% end %>
+          <% end %>
+
+
     </div>
   </div>
 

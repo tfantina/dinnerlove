@@ -31,7 +31,6 @@ class DinnersController < ApplicationController
     @tags = Tag.all
   end
 
-
   def create
     @dinner = current_user.dinners.build(dinner_params)
 
@@ -41,7 +40,6 @@ class DinnersController < ApplicationController
     end
 
     respond_to do |format|
-      save_tags(@dinner, params[:dinner][:tag])
       if @dinner.save
         format.html { redirect_to @dinner, notice: 'Dinner was successfully created.' }
         format.json { render :show, status: :created, location: @dinner }
@@ -58,14 +56,12 @@ class DinnersController < ApplicationController
 
   def update
     respond_to do |format|
-
-      if(params[:dinner][:photo])
-         shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
-         shrink_img.resize "500x500"
+      if params[:dinner][:photo]
+        shrink_img = MiniMagick::Image.new(params[:dinner][:photo].tempfile.path)
+        shrink_img.resize '500x500'
       end
 
       if @dinner.update(dinner_params)
-        save_tags(@dinner, params[:dinner][:tag])
         format.html { redirect_to @dinner, notice: 'Dinner was successfully updated.' }
         format.json { render :show, status: :ok, location: @dinner }
       else
@@ -118,21 +114,12 @@ class DinnersController < ApplicationController
   def dinner_current_user
     unless user_signed_in? && @dinner.user_id == current_user.id
       redirect_to root_path
+    end
   end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def dinner_params
-      params.require(:dinner).permit(:name, :notes, :photo, tags: [] )
-    end
-
-
-  def save_tags(dinner, tags)
-      tags.each do |tag|
-        puts tag
-        @tag = Tag.find_by(id: tag)
-        puts @tag.name
-        @dinner_tag = dinner.dinner_tags.build(tag: Tag.find_by(id: tag))
-      end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def dinner_params
+    params.require(:dinner).permit(:name, :notes, :photo, tag_ids: [])
     end
 
   def already_loved?
