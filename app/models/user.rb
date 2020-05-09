@@ -6,9 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :meal_plans
+  has_many :meal_plans, dependent: :destroy
   has_many :dinners
-  has_many :loves
-  has_many :user_tags
+  has_many :loves, dependent: :destroy
+  has_many :user_tags, dependent: :destroy
   has_many :tags, through: :user_tags
 end

@@ -181,12 +181,14 @@ li.list {
   overflow: hidden;
   padding: 4px;
   display: block;
+  text-decoration: line-through;
 }
 
 .check-btn input:checked + span {
   background-color: #1c924f;
   color: #fff;
   border-radius: 50px;
+  text-decoration: none;
 }
 
 .tags-field {
