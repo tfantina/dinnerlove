@@ -7,9 +7,9 @@
             <div class="card-img-sm">
                   <%= link_to dinner_path(@dinner) do %>
       <% if @dinner.photo.attached? %>
-        <%= image_tag @dinner.photo.variant(resize_to_fill: [500, 500]) %>
+        <%= image_tag @dinner.photo.variant(resize_to_fill: [500, 500]), alt: "Photo of #{@dinner.name}" %>
       <% else %>
-        <%= image_tag "default.png" %>
+        <%= image_tag "default.png" alt: "Default dinner image"%>
       <% end %>
             <% end %>
         </div>
