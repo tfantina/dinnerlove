@@ -24,10 +24,11 @@
       </div>
       <% end %>
 
+      <% unless @tags.empty? %>
       <div class="field tags-field">
         <%= f.label "Only plan meals with these tags:" %>
         <br />
-        <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| %>
+        <%= f.collection_check_boxes :tag_ids, @tags, :id, :name do |tag| %>
         <div class="check-btn">
           <label>
             <%= tag.check_box %><span><%= tag.text %></span>
@@ -35,6 +36,7 @@
         </div>
         <% end %>
       </div>
+      <% end %>
 
       <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

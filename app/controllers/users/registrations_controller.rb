@@ -36,15 +36,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @tags = Tag.joins(:dinner_tags).group('id')
+               .having('count(dinner_tags.tag_id) >? ', 1)
+    render :edit
+    puts "#{@tags} OK TAGTAGS"
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @tags = Tag.joins(:dinner_tags).group('id')
+               .having('count(dinner_tags.tag_id) >?', 1)
+    super
+  end
 
   # DELETE /resource
   # def destroy
