@@ -38,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def edit
     @tags = Tag.joins(:dinner_tags).group('id')
-               .having('count(dinner_tags.tag_id) >? ', 1)
+               .having('count(dinner_tags.tag_id) >? ', 14)
     render :edit
     puts "#{@tags} OK TAGTAGS"
   end
@@ -46,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     @tags = Tag.joins(:dinner_tags).group('id')
-               .having('count(dinner_tags.tag_id) >?', 1)
+               .having('count(dinner_tags.tag_id) >?', 14)
     super
   end
 
