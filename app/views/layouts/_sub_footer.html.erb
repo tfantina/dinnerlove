@@ -9,6 +9,7 @@
   <%= render "/meal_plans/new_meal", meals: @seven_random_dinners, user: current_user %>
 <% else %>
   <%= link_to 'Sign In', new_user_session_path, class: "button button-create button-log-radius"%>
+  <%= link_to 'Sign Up',  new_user_registration, class:"button button-create button-log-radius" %>
 <% end %>
 
 </div>
