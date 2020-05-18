@@ -18,11 +18,11 @@
     <% end %>
 
   </div>
-  <div class="notes">
   <% if params[:action] === "show" %>
-    <strong>Notes:</strong> <%= dinner.notes  %>
+    <div class="notes">
+      <strong>Notes:</strong> <%= dinner.notes  %>
+    </div>
   <% end %>
-  </div>
   <div class="tags">
     <strong>Tags: </strong>
     <% dinner.tags.each do |tag| %>
