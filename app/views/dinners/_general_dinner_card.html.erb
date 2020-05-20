@@ -1,4 +1,4 @@
-<div class="dinner-card shadow-lg">
+<div class="shadow-lg dinner-card" id="dinner-card">
   <div class="dinner-card-header text-xl font-bold text-gray-700">
     <% if params[:action] === "show" %>
         <%= link_to dinner.name, dinner_path(dinner) %>
@@ -20,7 +20,11 @@
   </div>
   <% if params[:action] === "show" %>
     <div class="notes">
-      <strong>Notes:</strong> <%= dinner.notes  %>
+      <strong>Recipe Notes:</strong>
+      <button class="note-down-btn" id="note-toggle"><span class="down" id="chevron-state"></span></button>
+      <div class="note-content" id="show-content">
+       <%= dinner.notes  %>
+      </div>
     </div>
   <% end %>
   <div class="tags">

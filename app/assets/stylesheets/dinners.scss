@@ -22,12 +22,19 @@
 .dinner-card {
   border-color: rgba(#1c934f, 0.3);
   border-width: 0.5px;
+  min-height: 600px;
   min-width: 150px;
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  transition: 1s;
+  transition: transform 1s;
   margin-bottom: 2rem;
+  transition: min-height 0.5s;
+}
+
+.dinner-card.reveal {
+  min-height: 1000px;
+  transition: min-height 0.5s;
 }
 
 .dinner-card:hover {
@@ -56,9 +63,46 @@
 
 .notes {
   padding: 8px;
-  height: 50px;
-  overflow: scroll;
 }
+
+.note-down-btn {
+  background-color: $palm-green;
+  border-radius: 100px;
+  height: 25px;
+  width: 25px;
+}
+
+.note-content {
+  opacity: 0;
+  overflow: hidden;
+  height: 0px;
+  transition: height 0.5s;
+}
+
+.note-content.reveal {
+  opacity: 1;
+  overflow: scroll;
+  height: 300px;
+  overflow: scroll;
+  transition: height 0.5s;
+}
+
+span.down {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-top: 8px;
+  border: solid $white;
+  border-width: 4px 0px 0px 4px;
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+}
+
+span.down.reveal {
+  transform: rotate(590deg);
+  margin-top: 4px;
+}
+
 .love {
   display: grid;
   grid-template-columns: 50px auto;

@@ -8,9 +8,9 @@ class Dinner < ApplicationRecord
   has_many :meals
   has_many :meal_plans, through: :meals
   has_many :loves
+  has_rich_text :notes
   has_many :dinner_tags
   has_many :tags, through: :dinner_tags
-
 
   # before_save :crop_image
   #
