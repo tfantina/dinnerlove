@@ -22,7 +22,7 @@ indefinitely. My intent for
 
 [x] ~~Style password recovery emails~~
 
-[ ] Allow users to swap individual meals out of a week
+[] Allow users to swap individual meals out of a week
 
 ### Longer term features to implement (not in any order)
 
