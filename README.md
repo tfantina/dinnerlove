@@ -17,19 +17,29 @@ DinnerLove is quickly approaching a beta release (1.0-Beta), where it will remai
 indefinitely. My intent for
 
 [x] ~~ActionText for recipe notes~~
+
 [x] ~~Style 404s~~
+
 [x] ~~Style password recovery emails~~
+
 [ ] Allow users to swap individual meals out of a week
 
 ### Longer term features to implement (not in any order)
 
 [ ] Full test coverage
+
 [ ] Account confirmation email
+
 [ ] Drag and drop week arrangement
+
 [ ] Search ability through “Find Love” section
+
 [ ] Pagination for “Find Love”
+
 [ ] Allow users to filter by tag
+
 [ ] Allow users to only see meals based on tags they select
+
 [ ] Switch dev DB to PgSQL
 
 ---
