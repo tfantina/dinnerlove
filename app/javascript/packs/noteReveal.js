@@ -13,7 +13,7 @@ const toggleNote = () => {
   }
 };
 
-window.addEventListener("load", function() {
+document.addEventListener("turbolinks:load", function() {
   let toggle = document.getElementById("note-toggle");
   toggle.addEventListener(
     "click",

@@ -97,6 +97,7 @@ class DinnersController < ApplicationController
   private
 
   def set_dinner
+    puts "HEY PARAMS #{params}"
     @dinner = Dinner.find(params[:id])
   end
 
