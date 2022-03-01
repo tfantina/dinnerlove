@@ -34,7 +34,7 @@ gem 'sentry-raven'
 
 # Image processing
 gem 'aws-sdk-s3', require: false
-gem 'image_processing', '~> 1.0'
+gem 'image_processing', '~> 1.12'
 gem 'mini_magick'
 
 group :development, :test do
